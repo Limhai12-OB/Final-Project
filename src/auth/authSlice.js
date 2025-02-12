@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { login } from "./authAction";
+import { getProfile, login } from "./authAction";
 
 const initialState = {
   isAuthenticated: false,
-  accessToken: "",
-  profile: "",
+  accessToken: null,
+  profile: {},
 };
 
 const authSlice = createSlice({
@@ -30,17 +30,22 @@ const authSlice = createSlice({
         //
         state.isAuthenticated = false;
         console.log("rejected", action.error);
+      })
+      .addCase(getProfile.pending, (state, action) => {
+        //
+      })
+      .addCase(getProfile.fulfilled, (state, action) => {
+        state.profile = action.payload;
+        state.isAuthenticated = true;
+      })
+      .addCase(getProfile.rejected, (state, action) => {
+        state.profile = null;
       });
     logout: (state) => {
       state, (isAuthenticated = false);
       localStorage.removeItem(Token);
     };
-    // logout: (state) => {
-    //   state.isAuthenticated = false;
-    //   localStorage.removeItem("token"); // Or wherever you store the token
-    //   // Clear other user data as needed
-    // };
   },
 });
-// export const { logout } = authSlice.actions;
+
 export default authSlice.reducer;

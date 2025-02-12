@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router";
+import { getProfile } from "../auth/authAction";
 const AvatarMenue = ({ avatar }) => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
@@ -15,6 +16,7 @@ const AvatarMenue = ({ avatar }) => {
         <button
           ref={profileRef}
           className="hidden w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 lg:focus:ring-2 lg:block mx-5"
+          onClick={() => setState(!state)}
         >
           <img
             src={avatar}
@@ -34,8 +36,15 @@ const AvatarMenue = ({ avatar }) => {
 };
 
 export default function HeaderPage() {
+  const dispatch = useDispatch();
   const [state, setState] = useState(false);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const accessToken = useSelector((state) => state.auth.accessToken);
+  const profile = useSelector((state) => state.auth.profile);
+  useEffect(() => {
+    console.log("testing");
+    dispatch(getProfile(accessToken));
+  }, [isAuthenticated]);
 
   const navigation = [
     { title: "Partners", path: "javascript:void(0)" },
@@ -106,7 +115,7 @@ export default function HeaderPage() {
             ))}
           </div>
           {isAuthenticated && isAuthenticated ? (
-            <AvatarMenue />
+            <AvatarMenue avatar={profile && profile.avatar} />
           ) : (
             <li className="order-2 py-5 md:py-0">
               <Link
