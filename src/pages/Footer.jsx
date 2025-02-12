@@ -3,65 +3,128 @@ import { Link } from "react-router";
 export default function FooterPage() {
   const footerNavs = [
     {
-      label: "Company",
+      label: "Provinces",
       items: [
         {
           href: "javascript:void()",
-          name: "Partners",
+          name: "Kratie",
         },
         {
           href: "javascript:void()",
-          name: "Blog",
+          name: "Stung Treng",
         },
         {
           href: "javascript:void()",
-          name: "Team",
+          name: "Ratanakiri",
         },
         {
           href: "javascript:void()",
-          name: "Careers",
+          name: "Mondulkiri",
         },
       ],
     },
     {
-      label: "Resources",
+      label: "Provinces",
       items: [
         {
           href: "javascript:void()",
-          name: "contact",
+          name: "Phnom Penh",
         },
         {
           href: "javascript:void()",
-          name: "Support",
+          name: "Kandal",
         },
         {
           href: "javascript:void()",
-          name: "Docs",
+          name: "Prey Veng",
         },
         {
           href: "javascript:void()",
-          name: "Pricing",
+          name: "Svay Rieng",
         },
       ],
     },
     {
-      label: "About",
+      label: "Provinces",
       items: [
         {
           href: "javascript:void()",
-          name: "Terms",
+          name: "Kep",
         },
         {
           href: "javascript:void()",
-          name: "License",
+          name: "Kompot",
         },
         {
           href: "javascript:void()",
-          name: "Privacy",
+          name: "Battambang",
         },
         {
           href: "javascript:void()",
-          name: "About US",
+          name: "Preah Vihear",
+        },
+      ],
+    },
+    {
+      label: "Provinces",
+      items: [
+        {
+          href: "javascript:void()",
+          name: "Kompong Speu",
+        },
+        {
+          href: "javascript:void()",
+          name: "Kompong Thom",
+        },
+        {
+          href: "javascript:void()",
+          name: "Tboung Khmum",
+        },
+        {
+          href: "javascript:void()",
+          name: "Pailin",
+        },
+      ],
+    },
+    {
+      label: "Provinces",
+      items: [
+        {
+          href: "javascript:void()",
+          name: "Takeo",
+        },
+        {
+          href: "javascript:void()",
+          name: "Kompong Chhnang",
+        },
+        {
+          href: "javascript:void()",
+          name: "Koh Kong",
+        },
+        {
+          href: "javascript:void()",
+          name: "PurSat",
+        },
+      ],
+    },
+    {
+      label: "Provinces",
+      items: [
+        {
+          href: "javascript:void()",
+          name: "Banteay Meanchey",
+        },
+        {
+          href: "javascript:void()",
+          name: "Oddar Meanchey",
+        },
+        {
+          href: "javascript:void()",
+          name: "Siem Reap",
+        },
+        {
+          href: "javascript:void()",
+          name: "Sihanoukville",
         },
       ],
     },
@@ -108,9 +171,7 @@ export default function FooterPage() {
         </div>
       </div>
       <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
-        <div className="mt-4 sm:mt-0">
-          &copy; 2022 Float UI All rights reserved.
-        </div>
+        <div className="mt-4 sm:mt-0">&copy; 2025 Alright Limhai.</div>
         <div className="mt-6 sm:mt-0">
           <ul className="flex items-center space-x-4">
             <li className="w-10 h-10 border rounded-full flex items-center justify-center">

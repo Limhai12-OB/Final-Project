@@ -1,10 +1,42 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
+const AvatarMenue = ({ avatar }) => {
+  const [state, setState] = useState(false);
+  const profileRef = useRef();
+  const logout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
+  return (
+    <div className="">
+      <div className="flex">
+        <button
+          ref={profileRef}
+          className="hidden w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 lg:focus:ring-2 lg:block mx-5"
+        >
+          <img
+            src={avatar}
+            className="w-full h-full rounded-full"
+            alt="Profile"
+          />
+        </button>
+        <Link
+          onClick={logout}
+          className="bg-red-600 dark:hover:text-red-800 rounded-md text-white text-md p-2.5"
+        >
+          Log Out
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export default function HeaderPage() {
   const [state, setState] = useState(false);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  // Replace javascript:void(0) path with your path
   const navigation = [
     { title: "Partners", path: "javascript:void(0)" },
     { title: "Customers", path: "javascript:void(0)" },
@@ -73,15 +105,18 @@ export default function HeaderPage() {
               </li>
             ))}
           </div>
-          <li className="order-2 py-5 md:py-0">
-            <Link
-              to={"/login"}
-              href="javascript:void(0)"
-              className="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600  active:bg-indigo-700 duration-150 block md:py-3 md:inline"
-            >
-              Log in
-            </Link>
-          </li>
+          {isAuthenticated && isAuthenticated ? (
+            <AvatarMenue />
+          ) : (
+            <li className="order-2 py-5 md:py-0">
+              <Link
+                to={"/login"}
+                className="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600  active:bg-indigo-700 duration-150 block md:py-3 md:inline"
+              >
+                Log in
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </>

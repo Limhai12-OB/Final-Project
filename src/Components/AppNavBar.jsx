@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import HeaderPage from "./Header";
+import { useSelector } from "react-redux";
 
 export default function Head() {
   const places = [
@@ -48,11 +49,11 @@ export default function Head() {
   return (
     <>
       <HeaderPage />
-      <section className="py-28 bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-cover bg-center relative">
+      <section className="py-28 bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]  bg-cover bg-center relative">
         <div className="absolute inset-0 bg-black/65 "></div>
 
         <div className="max-w-screen-xl mx-auto text-white gap-x-12 mt-44 items-center justify-between md:flex relative z-10">
-          <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+          <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl transition duration-300 hover:scale-105 dark:hover:scale-105">
             <h1 className="text-2xl  text-white font-medium">
               ខេមបូទ្រីប សូមស្វាគមន៍!
             </h1>
@@ -94,7 +95,7 @@ export default function Head() {
               </a>
             </div>
           </div>
-          <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
+          <div className="flex-none mt-14 md:mt-0 md:max-w-xl transition duration-300 hover:scale-105 dark:hover:scale-105">
             <img
               src="https://cdn.pixabay.com/photo/2019/10/09/14/14/ankor-wat-4537529_960_720.jpg"
               className="md:rounded-tl-[108px] shadow-2xl"
@@ -115,7 +116,11 @@ export default function Head() {
           </div>
           <div class="flex flex-wrap -m-4">
             {places.map((place, idx) => (
-              <Link key={idx} class="xl:w-1/4 md:w-1/2 p-4">
+              <Link
+                data-aos="fade-right"
+                key={idx}
+                class="xl:w-1/4 md:w-1/2 p-4 transition duration-300 hover:scale-105 dark:hover:scale-105"
+              >
                 <div class="bg-gray-100 p-6 rounded-lg">
                   <img
                     class="h-40 rounded w-full object-cover object-center mb-6"
@@ -136,8 +141,11 @@ export default function Head() {
               </Link>
             ))}
           </div>
-          <form className="text-center mt-6 bg-blue-900 w-28 m-auto p-3 rounded-md text-white">
-            <Link to={"/province"} className="">
+          <form className="text-center m-auto mt-6">
+            <Link
+              to={"/province"}
+              className="  bg-blue-900 w-28  p-3 rounded-md text-white"
+            >
               See More
             </Link>
           </form>
