@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import HeaderPage from "./Header";
-import { useSelector } from "react-redux";
 
 export default function Head() {
   const places = [
@@ -48,19 +46,20 @@ export default function Head() {
 
   return (
     <>
-      <HeaderPage />
-      <section className="py-28 bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]  bg-cover bg-center relative">
-        <div className="absolute inset-0 bg-black/65 "></div>
-
-        <div className="max-w-screen-xl mx-auto text-white gap-x-12 mt-44 items-center justify-between md:flex relative z-10">
-          <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl transition duration-300 hover:scale-105 dark:hover:scale-105">
-            <h1 className="text-2xl  text-white font-medium">
+      <section className="py-28 relative bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/65"></div>
+        <div className="-mt-28">
+          <HeaderPage />
+        </div>
+        <div className="max-w-screen-xl mt-56 mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8 relative">
+          <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl ">
+            <h1 className="text-3xl  text-white font-medium">
               ខេមបូទ្រីប សូមស្វាគមន៍!
             </h1>
             <h2 className="text-4xl text-white font-extrabold md:text-5xl">
               Welcome to CAMBO-TRIP!!
             </h2>
-            <p>
+            <p className="text-white">
               Embark on unforgettable adventures with us and discover the
               world's hidden gems. Whether you're chasing sunsets on pristine
               beaches, exploring ancient ruins, or trekking through lush
@@ -69,15 +68,15 @@ export default function Head() {
               adventure starts here
             </p>
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
-              <a
-                href="javascript:void(0)"
-                className="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 rounded-lg shadow-lg hover:bg-indigo-700"
+              <Link
+                to={""}
+                className="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
               >
                 Let's get started
-              </a>
+              </Link>
               <a
                 href="javascript:void(0)"
-                className="flex items-center justify-center gap-x-2 py-2 px-4 text-white border rounded-lg md:inline-flex hover:bg-white hover:text-gray-900 transition-colors"
+                className="flex items-center justify-center gap-x-2 py-2 px-4 font-medium duration-150 text-white  border rounded-lg md:inline-flex"
               >
                 Get access
                 <svg
@@ -95,13 +94,18 @@ export default function Head() {
               </a>
             </div>
           </div>
-          <div className="flex-none mt-14 md:mt-0 md:max-w-xl transition duration-300 hover:scale-105 dark:hover:scale-105">
+          <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
             <img
-              src="https://cdn.pixabay.com/photo/2019/10/09/14/14/ankor-wat-4537529_960_720.jpg"
-              className="md:rounded-tl-[108px] shadow-2xl"
+              src="https://images.unsplash.com/photo-1573164713619-24c711fe7878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80"
+              className=" md:rounded-tl-[108px]"
               alt=""
             />
           </div>
+        </div>
+        <div className="mt-14 px-4 md:px-8">
+          <p className="text-center text-sm text-gray-700 font-semibold">
+            Trusted by the best companies
+          </p>
         </div>
       </section>
       <section class="text-gray-600 body-font">

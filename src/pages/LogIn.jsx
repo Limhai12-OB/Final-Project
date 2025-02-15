@@ -41,10 +41,10 @@ export default function LogInForm() {
 
   return (
     <>
-      <HeaderPage />
-      <section className="py-28 bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-cover bg-center relative">
+      <section className=" bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-cover bg-center relative">
         <div className="absolute inset-0 bg-black/65 "></div>
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen  ">
+        <HeaderPage />
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen -mt-20 ">
           <div class="w-full bg-gray-300 opacity-75   rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h2 class="text-xl font-bold text-center text-gray-900 md:text-2xl dark:text-white ">

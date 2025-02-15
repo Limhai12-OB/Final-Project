@@ -4,9 +4,9 @@ import FooterPage from "./Footer";
 export default function ContactUs() {
   return (
     <>
-      <HeaderPage />
-      <section className="py-28 bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]  bg-cover bg-center relative">
+      <section className=" bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-cover bg-center relative">
         <div className="absolute inset-0 bg-black/65 "></div>
+        <HeaderPage />
         <section class=" dark:bg-gray-900 relative">
           <div class="container px-6 py-12 mx-auto">
             <div>
@@ -198,109 +198,3 @@ export default function ContactUs() {
     </>
   );
 }
-// import HeaderPage from "../Components/Header";
-// import FooterPage from "./Footer";
-
-// export default function ContactUs() {
-//   return (
-//     <>
-//       <HeaderPage />
-//       <section
-//         className="relative h-screen bg-cover bg-center py-28"
-//         style={{
-//           backgroundImage:
-//             "url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-//         }}
-//       >
-//         <div className="absolute inset-0 bg-black/65"></div>
-//         <div className="container mx-auto relative z-10 text-white">
-//           <div className="max-w-3xl mx-auto text-center">
-//             {" "}
-//             {/* Center content horizontally */}
-//             <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
-//             <p className="text-xl mb-8">
-//               We'd love to hear from you! Please fill out the form below.
-//             </p>
-//           </div>
-
-//           <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md max-w-lg mx-auto">
-//             {" "}
-//             {/* Center the form */}
-//             <form>
-//               <div className="grid grid-cols-2 gap-4">
-//                 <div>
-//                   <label
-//                     htmlFor="firstName"
-//                     className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-//                   >
-//                     First Name
-//                   </label>
-//                   <input
-//                     type="text"
-//                     id="firstName"
-//                     name="firstName"
-//                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300"
-//                   />
-//                 </div>
-//                 <div>
-//                   <label
-//                     htmlFor="lastName"
-//                     className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-//                   >
-//                     Last Name
-//                   </label>
-//                   <input
-//                     type="text"
-//                     id="lastName"
-//                     name="lastName"
-//                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300"
-//                   />
-//                 </div>
-//               </div>
-
-//               <div className="mt-4">
-//                 <label
-//                   htmlFor="email"
-//                   className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-//                 >
-//                   Email
-//                 </label>
-//                 <input
-//                   type="email"
-//                   id="email"
-//                   name="email"
-//                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300"
-//                 />
-//               </div>
-
-//               <div className="mt-4">
-//                 <label
-//                   htmlFor="message"
-//                   className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-//                 >
-//                   Message
-//                 </label>
-//                 <textarea
-//                   id="message"
-//                   name="message"
-//                   rows={4}
-//                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300"
-//                 ></textarea>
-//               </div>
-
-//               <div className="mt-6">
-//                 <button
-//                   type="submit"
-//                   className="w-full px-6 py-3 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700"
-//                 >
-//                   Send Message
-//                 </button>
-//               </div>
-//             </form>
-//           </div>
-//         </div>
-//       </section>
-//       <FooterPage />
-//     </>
-//   );
-// }

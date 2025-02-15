@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router";
 import { getProfile } from "../auth/authAction";
+import { useEffect, useRef, useState } from "react";
+
 const AvatarMenue = ({ avatar }) => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
@@ -26,7 +27,7 @@ const AvatarMenue = ({ avatar }) => {
         </button>
         <Link
           onClick={logout}
-          className="bg-red-600 dark:hover:text-red-800 rounded-md text-white text-md p-2.5"
+          className="bg-red-600 w-24 p-2 font-bold text-center text-white  rounded-full"
         >
           Log Out
         </Link>
@@ -41,93 +42,115 @@ export default function HeaderPage() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const accessToken = useSelector((state) => state.auth.accessToken);
   const profile = useSelector((state) => state.auth.profile);
+
   useEffect(() => {
     console.log("testing");
     dispatch(getProfile(accessToken));
   }, [isAuthenticated]);
 
   const navigation = [
-    { title: "Partners", path: "javascript:void(0)" },
-    { title: "Customers", path: "javascript:void(0)" },
-    { title: "Team", path: "javascript:void(0)" },
+    { title: "Features", path: "javascript:void(0)" },
+    { title: "Integrations", path: "javascript:void(0)" },
+    { title: "Provinces", path: "/province" },
+    { title: "Pricing", path: "javascript:void(0)" },
   ];
+
+  useEffect(() => {
+    document.onclick = (e) => {
+      const target = e.target;
+      if (!target.closest(".menu-btn")) setState(false);
+    };
+  }, []);
+
   return (
-    <>
-      <nav className="relative items-center pt-5 px-4  sm:px-8 md:flex md:space-x-6">
-        <div className="flex justify-between">
+    <nav
+      className={` pb-5 md:text-sm ${
+        state
+          ? " shadow-lg rounded-xl  mx-2 mt-2 md:shadow-none  md:mx-2 md:mt-0"
+          : ""
+      }`}
+    >
+      <div className="gap-x-14 items-center px-4 md:flex md:px-8 relative">
+        <div className="flex items-center justify-between py-5 md:block">
           <Link to={"/"}>
-            <img
-              src="/image/logo.png"
-              width={130}
-              height={50}
-              alt="Float UI logo"
-            />
+            <img src="/image/logo.png" width={120} height={50} alt="logo" />
           </Link>
-          <button
-            className="text-gray-500 outline-none md:hidden"
-            onClick={() => setState(!state)}
-          >
-            {state ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-        <ul
-          className={`flex-1 justify-between mt-12 md:text-sm md:font-medium md:flex md:mt-0 ${
-            state
-              ? "absolute inset-x-0 px-4 border-b bg-white md:border-none md:static"
-              : "hidden"
-          }`}
-        >
-          <div className="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
-            {navigation.map((item, idx) => (
-              <li className="text-gray-500 hover:text-indigo-600" key={idx}>
-                <a href={item.path}>{item.title}</a>
-              </li>
-            ))}
+          <div className="md:hidden">
+            <button className="menu-btn " onClick={() => setState(!state)}>
+              {state ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4.293 4.293a1 1  011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              )}
+            </button>
           </div>
-          {isAuthenticated && isAuthenticated ? (
-            <AvatarMenue avatar={profile && profile.avatar} />
-          ) : (
-            <li className="order-2 py-5 md:py-0">
+        </div>
+        <div
+          className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
+            state ? "block" : "hidden"
+          } `}
+        >
+          <ul className="justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+            {navigation.map((item, idx) => {
+              return (
+                <li key={idx} className="text-white hover:text-gray-300">
+                  <a href={item.path} className="block">
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="flex-1 gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
+            {isAuthenticated && isAuthenticated ? (
+              <AvatarMenue avatar={profile && profile.avatar} />
+            ) : (
               <Link
+                className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-blue-800  rounded-full md:inline-flex"
                 to={"/login"}
-                className="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600  active:bg-indigo-700 duration-150 block md:py-3 md:inline"
               >
                 Log in
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </Link>
-            </li>
-          )}
-        </ul>
-      </nav>
-    </>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }
