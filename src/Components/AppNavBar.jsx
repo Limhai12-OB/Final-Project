@@ -96,7 +96,7 @@ export default function Head() {
           </div>
           <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
             <img
-              src="https://images.unsplash.com/photo-1573164713619-24c711fe7878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80"
+              src="https://media.istockphoto.com/id/855062624/photo/angkor-wat-temple-siem-reap-cambodia.jpg?s=170667a&w=0&k=20&c=kVLter5l9KV5YO9hS8_-rTfRI3vFRWHPSSM365W3VpE="
               className=" md:rounded-tl-[108px]"
               alt=""
             />
