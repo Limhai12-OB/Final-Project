@@ -6,13 +6,14 @@ import { useEffect, useRef, useState } from "react";
 const AvatarMenue = ({ avatar }) => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
+
   const logout = () => {
     dispatch(logout());
     navigate("/login");
   };
 
   return (
-    <div className="">
+    <div>
       <div className="flex">
         <button
           ref={profileRef}
@@ -27,9 +28,9 @@ const AvatarMenue = ({ avatar }) => {
         </button>
         <Link
           onClick={logout}
-          className="bg-red-600 w-24 p-2 font-bold text-center text-white  rounded-full"
+          className="bg-red-600 w-36 p-2 font-bold text-center text-white  rounded-full"
         >
-          Log Out
+          Log Out - <span>ចាកចេញ</span>
         </Link>
       </div>
     </div>
@@ -49,7 +50,7 @@ export default function HeaderPage() {
   }, [isAuthenticated]);
 
   const navigation = [
-    { title: "Features", path: "javascript:void(0)" },
+    { title: "About Cambodia", path: "/aboutcambodia" },
     { title: "Integrations", path: "javascript:void(0)" },
     { title: "Provinces", path: "/province" },
     { title: "Pricing", path: "javascript:void(0)" },
@@ -118,9 +119,9 @@ export default function HeaderPage() {
             {navigation.map((item, idx) => {
               return (
                 <li key={idx} className="text-white hover:text-gray-300">
-                  <a href={item.path} className="block">
+                  <Link to={item.path} className="block">
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -130,10 +131,10 @@ export default function HeaderPage() {
               <AvatarMenue avatar={profile && profile.avatar} />
             ) : (
               <Link
-                className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-blue-800  rounded-full md:inline-flex"
+                className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-bold bg-blue-800  rounded-full md:inline-flex"
                 to={"/login"}
               >
-                Log in
+                Log in - <span>ចូលគណនី</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"

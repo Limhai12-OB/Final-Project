@@ -7,10 +7,12 @@ import MainLayout from "./Layout/MainLayout.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import ErrorPage from "./pages/Error.jsx";
 import LogInForm from "./pages/LogIn.jsx";
-import ContactUs from "./pages/ContactUs.jsx";
+
 import AllProvince from "./pages/Province.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
+import ContactUs from "./pages/ContactUs.jsx";
+import AboutCambodia from "./pages/AboutCambodia.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/province",
     element: <AllProvince />,
+  },
+  {
+    path: "/aboutcambodia",
+    element: <AboutCambodia />,
   },
 ]);
 

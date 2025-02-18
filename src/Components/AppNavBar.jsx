@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 import HeaderPage from "./Header";
 
+import Gallery from "./Gallery";
+
 export default function Head() {
   const places = [
     {
@@ -44,6 +46,14 @@ export default function Head() {
     },
   ];
 
+  const scrollToPlaces = (event) => {
+    event.preventDefault();
+    const sectionPlaces = document.getElementById("sectionPlaces");
+    if (sectionPlaces) {
+      sectionPlaces.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section className="py-28 relative bg-[url('https://images.unsplash.com/photo-1623473882999-2f33d6fc1d09?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
@@ -52,7 +62,10 @@ export default function Head() {
           <HeaderPage />
         </div>
         <div className="max-w-screen-xl mt-56 mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8 relative">
-          <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl ">
+          <div
+            data-aos="fade-right"
+            className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl "
+          >
             <h1 className="text-3xl  text-white font-medium">
               ខេមបូទ្រីប សូមស្វាគមន៍!
             </h1>
@@ -69,49 +82,56 @@ export default function Head() {
             </p>
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
               <Link
-                to={""}
+                to={"#"}
+                onClick={scrollToPlaces}
                 className="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
               >
                 Let's get started
               </Link>
-              <a
-                href="javascript:void(0)"
-                className="flex items-center justify-center gap-x-2 py-2 px-4 font-medium duration-150 text-white  border rounded-lg md:inline-flex"
-              >
-                Get access
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
             </div>
           </div>
-          <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
+          <div
+            data-aos="fade-left"
+            className="relative mt-10 h-[500px] md:h-[600px] lg:h-[500px] w-full overflow-hidden"
+          >
             <img
-              src="https://media.istockphoto.com/id/855062624/photo/angkor-wat-temple-siem-reap-cambodia.jpg?s=170667a&w=0&k=20&c=kVLter5l9KV5YO9hS8_-rTfRI3vFRWHPSSM365W3VpE="
-              className=" md:rounded-tl-[108px]"
-              alt=""
+              src="https://www.monash.edu/__data/assets/image/0004/837841/angkor.gif"
+              alt="Angkor Wat"
+              className="object-cover object-center w-full h-full md:rounded-tl-[120px] md:rounded-br-[120px]"
             />
+            <div className="absolute inset-0 bg-black/50 md:rounded-tl-[120px] md:rounded-br-[120px]  "></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="mt-92 text-amber-50">
+                <span className="flex items-center justify-center">
+                  ព្រះរាជាណាចក្រកម្ពុជា
+                </span>
+                <p className="text-lg md:text-xl lg:text-2xl">
+                  Cambodia the wonders of Southeast Asia
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-14 px-4 md:px-8">
-          <p className="text-center text-sm text-gray-700 font-semibold">
-            Trusted by the best companies
-          </p>
-        </div>
       </section>
-      <section class="text-gray-600 body-font">
+      <main id="sectionPlaces">
+        <div
+          data-aos="zoom-in-up"
+          className="items-center justify-center flex mb-6 lg:mb-0 mt-16"
+        >
+          <h1 className="gallery sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-white">
+            វប្បធម៏ខ្មែរ
+          </h1>
+          <p className="font-bold text-xl"> - Khmer culture</p>
+          <div className="w-44 h-1 bg-blue-500 mt-12 flex justify-center items-center absolute rounded"></div>{" "}
+        </div>
+        <div className="flex justify-center items-center p-36">
+          <Gallery />
+        </div>
+      </main>
+      <section>
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap w-full mb-20">
-            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <div data-aos="zoom-in-right" class="lg:w-1/2 w-full mb-6 lg:mb-0">
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
                 Best places in Cambodia!
               </h1>
