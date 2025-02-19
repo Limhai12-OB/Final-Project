@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import HeaderPage from "./Header";
 
 import Gallery from "./Gallery";
+import VisitUs from "./VisitCambodia";
 
 export default function Head() {
   const places = [
@@ -64,6 +65,8 @@ export default function Head() {
         <div className="max-w-screen-xl mt-56 mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8 relative">
           <div
             data-aos="fade-right"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-sine"
             className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl "
           >
             <h1 className="text-3xl  text-white font-medium">
@@ -92,6 +95,8 @@ export default function Head() {
           </div>
           <div
             data-aos="fade-left"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-sine"
             className="relative mt-10 h-[500px] md:h-[600px] lg:h-[500px] w-full overflow-hidden"
           >
             <img
@@ -142,8 +147,9 @@ export default function Head() {
             {places.map((place, idx) => (
               <Link
                 data-aos="fade-right"
+                data-aos-duration="1300"
                 key={idx}
-                class="xl:w-1/4 md:w-1/2 p-4 transition duration-300 hover:scale-105 dark:hover:scale-105"
+                class="xl:w-1/4 md:w-1/2 p-4  hover:scale-105 dark:hover:scale-105"
               >
                 <div class="bg-gray-100 p-6 rounded-lg">
                   <img
@@ -168,13 +174,16 @@ export default function Head() {
           <form className="text-center m-auto mt-6">
             <Link
               to={"/province"}
-              className="  bg-blue-900 w-28  p-3 rounded-md text-white"
+              className=" bg-blue-900 w-28  p-3 rounded-md text-white"
             >
               See More
             </Link>
           </form>
         </div>
       </section>
+      <div>
+        <VisitUs />
+      </div>
     </>
   );
 }
