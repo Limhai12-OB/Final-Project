@@ -53,11 +53,11 @@ export default function Gallery() {
       </section> */}
       <section className="gallery">
         <div className="flex flex-wrap ">
-          <div className="flex flex-wrap  md:w-1/2">
+          <div className="flex flex-wrap  sm:w-1/2 ">
             <div
               data-aos="fade-right"
               data-aos-duration="1300"
-              className="md:p-2 p-1 w-full md:w-1/2 aspect-square"
+              className="md:p-2 p-1 w-full sm:w-1/2 aspect-square"
             >
               <img
                 alt="gallery"
@@ -68,7 +68,7 @@ export default function Gallery() {
             <div
               data-aos="fade-right"
               data-aos-duration="1300"
-              className="md:p-2 p-1 w-full md:w-1/2 aspect-square"
+              className="md:p-2 p-1 w-full sm:w-1/2 aspect-square"
             >
               <img
                 alt="gallery"
@@ -88,7 +88,7 @@ export default function Gallery() {
               />
             </div>
           </div>
-          <div className="flex flex-wrap w-full md:w-1/2">
+          <div className="flex flex-wrap w-full sm:w-1/2">
             <div
               data-aos="fade-left"
               data-aos-duration="1300"
@@ -103,7 +103,7 @@ export default function Gallery() {
             <div
               data-aos="fade-left"
               data-aos-duration="1300"
-              className="md:p-2 p-1 w-full md:w-1/2 aspect-square"
+              className="md:p-2 p-1 w-full sm:w-1/2 aspect-square"
             >
               <img
                 alt="gallery"
@@ -114,7 +114,7 @@ export default function Gallery() {
             <div
               data-aos="fade-left"
               data-aos-duration="1300"
-              className="md:p-2 p-1 w-full md:w-1/2 aspect-square"
+              className="md:p-2 p-1 w-full sm:w-1/2  aspect-square"
             >
               <img
                 alt="gallery"

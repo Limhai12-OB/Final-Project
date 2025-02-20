@@ -57,7 +57,7 @@ export default function VisitUs() {
             </div>
           </main>
         </div>
-        <div>
+        <div className="flex items-center justify-center">
           <div className="grid md:grid-cols-3 sm:grid-cols-1 sm:mt-5 gap-3 p-10 relative">
             {/* Add some image to support the idea (right side) */}
             <img
