@@ -62,7 +62,7 @@ export default function Gallery() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="/image/martial.jpg"
+                src="https://www.khmertimeskh.com/wp-content/uploads/2018/10/P12-13-pix-2.jpg"
               />
             </div>
             <div
@@ -84,7 +84,7 @@ export default function Gallery() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="/image/khmer.jpg"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYpapsy6XaIShnrVHlQcFyOWnoIJrhcTGkpmAfaEmDVN-BTTYcZcjvMxLihUwVTFrBa2W46rGXRhhawY1aCf5uGK9uvKr8yFq3YkPfHHQ4XxrwVqHNCD7hFF5ZR3U8TOqLGwJKZT1Jf6M/s1600/430680_259346267472862_383078239_n.jpg"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Gallery() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="/image/wall.jpeg"
+                src="https://www.khmertimeskh.com/wp-content/uploads/2017/11/7_TOP_Side.jpg"
               />
             </div>
             <div
@@ -108,7 +108,7 @@ export default function Gallery() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="/image/apsara.jpg"
+                src="https://www.boreiangkor.com/wp-content/uploads/2023/12/trandictional-khmer-band.jpg"
               />
             </div>
             <div
@@ -119,7 +119,7 @@ export default function Gallery() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="/image/apsaraii.jpg"
+                src="https://pppenglish.sgp1.digitaloceanspaces.com/image/main/20245/10_5_2024_grandma_apsara.jpg"
               />
             </div>
           </div>

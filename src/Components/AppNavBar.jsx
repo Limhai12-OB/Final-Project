@@ -176,7 +176,7 @@ export default function Head() {
               data-aos-duration="1300"
               class="lg:w-1/2 w-full mb-6 lg:mb-0"
             >
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-white">
                 Best places in Cambodia!
               </h1>
               <div class="h-1 w-20 bg-blue-500 rounded"></div>
@@ -196,13 +196,13 @@ export default function Head() {
                     src={place.image}
                     alt="content"
                   />
-                  <h3 class="tracking-widest text-blue-500 text-xs font-medium title-font">
+                  <h3 class="tracking-widest text-blue-500  text-xs font-medium title-font">
                     SUBTITLE
                   </h3>
                   <h1 class="text-lg text-gray-900 font-medium title-font mt-3">
                     {place.name}
                   </h1>
-                  <p class="leading-relaxed text-base">
+                  <p class="leading-relaxed dark:text-black text-base">
                     Fingerstache flexitarian street art 8-bit waistcoat.
                     Distillery hexagon disrupt edison bulbche.
                   </p>
@@ -215,7 +215,7 @@ export default function Head() {
               to={"/province"}
               data-aos="fade-up"
               data-aos-duration="1000"
-              className=" bg-blue-900 w-28  p-3 rounded-md text-white"
+              className=" bg-blue-900 w-28 poppin font-bold  p-3 rounded-md text-white"
             >
               See More
             </Link>
