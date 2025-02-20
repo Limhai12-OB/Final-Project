@@ -47,6 +47,40 @@ export default function Head() {
     },
   ];
 
+  const interesting = [
+    {
+      img: "https://dmcmekongimage.com/wp-content/uploads/2022/10/National-flag-Cambodia-768x515.jpg",
+      intro: "The most special national flag in the world",
+    },
+    {
+      img: "https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/10/Geckos-Adventures-cambodia_angkor-wat_day-78.jpg",
+      intro: "The ancient ruins of Angkor are way bigger than you think",
+    },
+    {
+      img: "https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/10/Intrepid-Travel-Cambodia_Chi-Phat-walkinvillage.jpg",
+      intro: "You can learn from the locals on a homestay adventure ",
+    },
+    {
+      img: "https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/10/Intrepid-Travel-cambodia_phnom_penh_ricefields.jpg",
+      intro: "You’ll find the largest freshwater lake in Southeast Asia",
+    },
+    {
+      img: "https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/10/Intrepid-Travel-Cambodia_Phnom-Penh_Tuk-Tuk-Ryan-Bolton4296.jpg",
+      intro: "You can get nearly anywhere in a tuk tuk",
+    },
+    {
+      img: "https://dmcmekongimage.com/wp-content/uploads/2022/10/Angkor-Wat-768x515.jpg",
+      intro: "Angkor Wat – the largest religious building in the world",
+    },
+    {
+      img: "https://dmcmekongimage.com/wp-content/uploads/2022/10/traditional-custome-Cambodia-768x515.jpg",
+      intro: "The traditional Khmer costume",
+    },
+    {
+      img: "https://thebettercambodia.com/wp-content/uploads/2022/07/cambodia-way-of-greeting-1.png",
+      intro: "The original khmer greetings",
+    },
+  ];
   const scrollToPlaces = (event) => {
     event.preventDefault();
     const sectionPlaces = document.getElementById("sectionPlaces");
@@ -121,6 +155,7 @@ export default function Head() {
       <main id="sectionPlaces">
         <div
           data-aos="zoom-in-up"
+          data-aos-duration="1000"
           className="items-center justify-center flex mb-6 lg:mb-0 mt-16"
         >
           <h1 className="gallery sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-white">
@@ -129,14 +164,18 @@ export default function Head() {
           <p className="font-bold text-xl"> - Khmer culture</p>
           <div className="w-44 h-1 bg-blue-500 mt-12 flex justify-center items-center absolute rounded"></div>{" "}
         </div>
-        <div className="flex justify-center items-center p-36">
+        <div className="flex justify-center items-center p-32">
           <Gallery />
         </div>
       </main>
       <section>
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap w-full mb-20">
-            <div data-aos="zoom-in-right" class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1300"
+              class="lg:w-1/2 w-full mb-6 lg:mb-0"
+            >
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
                 Best places in Cambodia!
               </h1>
@@ -171,9 +210,11 @@ export default function Head() {
               </Link>
             ))}
           </div>
-          <form className="text-center m-auto mt-6">
+          <form className="text-center m-auto mt-10">
             <Link
               to={"/province"}
+              data-aos="fade-up"
+              data-aos-duration="1000"
               className=" bg-blue-900 w-28  p-3 rounded-md text-white"
             >
               See More
@@ -184,6 +225,41 @@ export default function Head() {
       <div>
         <VisitUs />
       </div>
+      <section>
+        {/* interesting or some fact about Cambodia */}
+        <div>
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="1300"
+            className="text-4xl font-bold text-center uppercase poppin mt-16"
+          >
+            Some interesting about Cambodia
+          </h2>
+        </div>
+
+        <form className="flex justify-center items-center">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 grid-cols-1  p-10 mt-10">
+            {interesting.map((interesting) => (
+              <div
+                data-aos="fade-right"
+                data-aos-duration="1300"
+                class="  overflow-hidden rounded-lg shadow-lg"
+              >
+                <img
+                  class="object-cover object-center w-full h-56"
+                  src={interesting.img}
+                  alt="avatar"
+                />
+                <div class="flex items-center px-6 py-3 lg:h-[80px]  md:h-[90px] bg-gray-900">
+                  <h1 class=" text-lg font-semibold  text-white">
+                    {interesting.intro}
+                  </h1>
+                </div>
+              </div>
+            ))}
+          </div>
+        </form>
+      </section>
     </>
   );
 }
