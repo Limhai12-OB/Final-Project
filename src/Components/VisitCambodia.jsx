@@ -9,14 +9,14 @@ export default function VisitUs() {
           <h1
             data-aos="fade-right"
             data-aos-duration="1300"
-            className="md:text-4xl sm:text-3xl  mt-8 -ml-32
-             text-xl sm:mt-16 sm:ml-10   font-bold text-white"
+            className="md:text-4xl sm:text-3xl  mt-8 -ml-45
+             text-xl sm:mt-16 sm:-ml-15   font-bold text-white"
           >
-            <p className="md:text-5xl md:-ml-27 sm:-ml-7 ml-45 ">ហេតុអ្វី</p>
+            <p className="md:text-5xl md:-ml-27 sm:-ml-7 ml-40 ">ហេតុអ្វី</p>
             <h3 className="md:mt-3 md:text-4xl sm:text-2xl sm:-ml-7 md:-ml-28 ml-40   flex">
               Why Visit{" "}
             </h3>
-            <h3 className="text-blue-600 md:text-9xl md:ml-3 sm:ml-16  md:-mt-28 sm:-mt-17 sm:text-7xl ml-60 -mt-13 text-5xl absolute">
+            <h3 className="text-blue-600 md:text-9xl md:ml-3 sm:ml-16 text-3xl  md:-mt-28 sm:-mt-17 sm:text-7xl ml-60 -mt-13  absolute">
               Ca<m className="text-red-500 uppercase">mbod</m>ia
             </h3>{" "}
           </h1>
@@ -26,7 +26,7 @@ export default function VisitUs() {
             className="md:ml-20 cursor-pointer md:w-[330px] mt-4 "
           >
             <div
-              className="bg-slate-200 w-[330px] hover:bg-blue-600 hover:text-white duration-500 transition 
+              className="bg-slate-200  hover:bg-blue-600 hover:text-white duration-500 transition 
             ease-in-out  md:p-4 p-2 rounded-tr-3xl rounded-md mt-4 shadow-lg"
             >
               <h2 className="font-bold p md:text-2xl material-symbols-outlined">

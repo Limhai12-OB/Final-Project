@@ -3,6 +3,7 @@ import HeaderPage from "./Header";
 
 import Gallery from "./Gallery";
 import VisitUs from "./VisitCambodia";
+import Interest from "./JoinUs";
 
 export default function Head() {
   const places = [
@@ -231,7 +232,7 @@ export default function Head() {
           <h2
             data-aos="fade-up"
             data-aos-duration="1300"
-            className="text-4xl font-bold text-center uppercase poppin mt-16"
+            className="text-4xl text-blue-900 font-bold text-center uppercase poppin mt-16"
           >
             Some interesting about Cambodia
           </h2>
@@ -260,6 +261,9 @@ export default function Head() {
           </div>
         </form>
       </section>
+      <div>
+        <Interest />
+      </div>
     </>
   );
 }
